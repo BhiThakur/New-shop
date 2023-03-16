@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bramhachaitanya krushi seva kendra</title>
+    <script src="https://kit.fontawesome.com/da212f0abf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="chemical.css">
+</head>
+
+<body>
+    <div class="main_continer">
+        <div class="title">
+            <p><a href=""><i class="fa-solid fa-house-chimney"></i></a><span class="type">Chemical product</span></p>
+        </div>
+    </div>
+    <label for="">
+        <select name="chmi_select" id="chemicle_product" class="selector-1">
+            <option value="ALKOTHRIN">ALKOTHRIN (अल्कोथ्रिन)</option>
+            <option value="KOHIBAN-50(CLORO)">KOHIBAN (कोहिबान-५०(क्लोरो))</option>
+            <option value="CYCLONE">CYCLONE</option>
+            <option value="SCORPIO(LAMADA)">SCORPIO (स्कॉर्पिओ (लॅम्बडा))</option>
+            <option value="FILIKA">FILIKA (फिलिका)</option>
+            <option value="FILJYOTI">FILJYOTI (फिलज्योती)</option>
+            <option value="IMIDA SUPER(MIDA)">IMIDA SUPER (इमिडा सुपर (मिडा))</option>
+            <option value="KASTIN(BAVISTIN)">KASTIN (कॅस्टिन (बाविस्टिन))</option>
+            <option value="KOHINOOR(MANCHOZEB)">KOHINOOR (कोहिनूर (मॅन्कोझेब))</option>
+            <option value="KOHIPHOS">KOHIPHOS (कोहिफॉस)</option>
+            <option value="RUBIGUN(SCOR)">RUBIGUN (SCOR) (रुबिगन (स्कोर))</option>
+            <option value="SUPERVIT(SULPHAR)">SUPERVIT (सुपरव्हिट (सल्फर))</option>
+            <option value="ENVIL">ENVIL (एव्हील)</option>
+            <option value="FILAZO">FILAZO (फिलाझो)</option>
+            <option value="FIL-CM">FIL-CM <br>(फिल-सीएम)</option>
+            <option value="GRAPPLE">GRAPPLE (ग्रेपल)</option>
+        </select>
+    </label>
+    <div class="quntity_and_praman">
+        <!-- water quantity -->
+        <input type="number" class="Quantity_input" placeholder="Water Quantity" id="Quantity_input"  onkeypress="isnumber(event)" onkeyup="myFunction()">
+        <input type="number" class="Quantity_praman" id="Quantity_praman" placeholder="Praman" onkeyup="changecolor(event)">
+    </div>
+    <div class="barral_button">
+        <select name="barral" id="barral" class="barral">
+            <option value="none" selected disabled hidden>Barral size</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="500">500</option>
+        </select>
+        <!-- Barral quantity -->
+        <input type="number" class="barral_input" placeholder="Barral Qty" id="barral_input" onkeypress="isnumber(event)" onkeyup="myFunction2()">
+    </div>
+    <div class="button_parent">
+        <button class="button" onclick="chemical();show_price()" >Click</button>
+    </div>
+
+    <!-- all ans para -->
+    <div class="price_quantity">
+        <!-- kiti aushadh lagel te ml madhe -->
+        <!-- <p class="paragraph_price_quantity"><span class="span_margin">Quantity</span> <span id="total_quantity" class="span_color"></span></p> -->
+
+        <!-- dilelya barrals madhe kiti pani hoil te -->
+        <p class="paragraph_price_quantity">
+            <span class="span_margin">Total water in barrals :</span>
+            <span class="span_color" id="total_water_barrals" ></span>
+        </p>
+        <p class="paragraph_price_quantity">
+            <span class="span_margin">Barrel quantitys :</span>
+            <span class="span_color" id="total_barrals" ></span>
+        </p>
+
+        <!-- <p class="paragraph_and_quantity"><span class="barral_quantity_text">Barrel quantitys</span> <span></span></p> -->
+        <p class="paragraph_price_quantity">
+            <span class="span_margin">Price :</span>
+            <span class="span_color" id="price"></span>  
+        </p>
+        <p class="paragraph_price_quantity">
+            <span class="span_margin">Price with praman :</span>
+            <span class="span_color" id="price_praman"></span>  
+        </p>
+    </div>
+
+    <!--  end all ans para-->
+<div>
+        <table class="table">
+            <tr class="table_raw">
+                <td class="table_head">Qty</td>
+                <td class="table_data">Price</td>
+            </tr>
+            <tr>
+                <td class="table_head" id="first">1Lr</td>
+                <td class="table_data" id="first_price"></td>
+            </tr>
+            <tr>
+                <td class="table_head" id="second">500ml</td>
+                <td class="table_data" id="second_price"></td>
+            </tr>
+            <tr>
+                <td class="table_head" id="third">5Lr</td>
+                <td class="table_data" id="third_price"></td>
+            </tr>
+            <tr>
+                <td class="table_head" id="forth">10Lr</td>
+                <td class="table_data" id="forth_price"></td>
+            </tr>
+        </table>
+    </div>
+    <!-- <div>
+        <table class="table">
+            <tr class="table_raw">
+                <td class="table_head">Qty</td>
+                <td class="table_data">P x B</td>
+                <td class="zero_margin_table_data">&nbsp</td>
+                <td class="table_data_total">Tottle</td>
+            </tr>
+            <tr>
+                <td class="table_head" id="first">1Lr</td>
+                <td class="table_data" id="first_price"></td>
+                <td class="zero_margin_table_data">-</td>
+                <td class="table_data_total" id="firstB_x_price"></td>
+            </tr>
+            <tr>
+                <td class="table_head" id="second">500ml</td>
+                <td class="table_data" id="second_price"></td>
+                <td class="zero_margin_table_data">-</td>
+                <td class="table_data_total" id="secondB_x_price"></td>
+            </tr>
+            <tr>
+                <td class="table_head" id="third">5Lr</td>
+                <td class="table_data" id="third_price"></td>
+                <td class="zero_margin_table_data">-</td>
+                <td class="table_data_total" id="thirdB_x_price"></td>
+            </tr>
+            <tr>
+                <td class="table_head" id="forth">10Lr</td>
+                <td class="table_data" id="forth_price"></td>
+                <td class="zero_margin_table_data">-</td>
+                <td class="table_data_total" id="forthB_x_price"></td>
+            </tr>
+        </table>
+    </div> -->
+    <div>
+        <p class="empty">
+
+        </p>
+    </div>
+    <div>
+        <script src="chemical.js"></script>
+        <script src="chemical_price.js"></script>
+    </div>
+</body>
+
+</html>
